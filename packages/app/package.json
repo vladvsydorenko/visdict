@@ -1,0 +1,16 @@
+{
+  "name": "@inless/ui-scene",
+  "version": "0.0.0",
+  "description": "UI components for inless scene",
+  "main": "dist/ui-scene.js",
+  "author": "Vlad Sydorenko <vladv.sydorenko@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^16.0.3"
+  }
+}
