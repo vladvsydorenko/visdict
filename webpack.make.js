@@ -25,10 +25,25 @@ const moduleHandlers = {
             ]
         });
         return config;
+    },
+
+    node: (config, options, dir) => {
+        config.node = {
+            fs: 'empty',
+            net: 'empty'
+        };
+        config.target = 'node';
+        return config;
     }
 };
 
-exports.generatePackageConfig = function({ name, html, css }) {
+exports.generatePackageConfig = function({
+    name,
+    html = false,
+    css = false,
+    tsx = false,
+    node = false,
+}) {
     let modules = {};
 
     if (html) {
@@ -41,12 +56,17 @@ exports.generatePackageConfig = function({ name, html, css }) {
         modules.css = {};
     }
 
+    if (node) {
+        modules.node = {};
+    }
+
     return {
         name,
         dir: `./packages/${name}`,
-        entry: './src/index.tsx',
+        entry: `./src/index.ts${tsx ? "x": ""}`,
         modules,
         externals: [],
+        node
     }
 };
 
@@ -56,6 +76,7 @@ exports.makeWebpackConfig = function({
     entry = './src/index.ts',
     externals = [],
     modules = [],
+    node
 }) {
     const config = {
         entry: path.join(__dirname, dir, entry),

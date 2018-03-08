@@ -1,8 +1,8 @@
 {
-  "name": "@inless/ui-scene",
+  "name": "@visdict/client",
   "version": "0.0.0",
-  "description": "UI components for inless scene",
-  "main": "dist/ui-scene.js",
+  "description": "VisDict client",
+  "main": "dist/client.js",
   "author": "Vlad Sydorenko <vladv.sydorenko@gmail.com>",
   "license": "MIT",
   "private": true,

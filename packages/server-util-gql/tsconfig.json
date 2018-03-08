@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
+    "lib": [
+      "esnext"
+    ]
+  },
+  "files": [
+    "./src/index.ts"
+  ]
+}
