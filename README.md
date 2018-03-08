@@ -1,15 +1,18 @@
-# inless
+# VisDict
+The monorepo for VisDict appliction. Both client and server for now.
 
-The monorepo for common inless packages.
+# Getting Started
 
-# App vs Service
-`App` is just a library bundling some logic. Like node-editor, that could be easyly imported and started with some parameters.
-`Service` is a project with continues delivery solution. Services could communicate between each other. 
+Install dependencies
 
-# Setting Up a package
+`yarn`
 
-Each package is placed inside `pacakges` dir and should follow next name style:
- - `util-${name}` - for util packages like `util-cycler`. An util package shouldn't be overloaded with a specific app logic
- - `ui-${name}` - for ui packages. E.g. `ui-scene` contains all components and base styles for `scene`(todo: describe what's scene).
- - `app-${name}` - for applications like `app-editor` that contains all logic for node editor.
+Init packages, install their dependencies etc by `lerna`
 
+`yarn run init`
+
+Run application via webpack-dev-server
+
+`yarn run dev:web app`
+
+That's it, open `http://localhost:8080/` and enjoy
