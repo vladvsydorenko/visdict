@@ -15,7 +15,8 @@
     "concurently:build": "webpack",
     "concurently:watch": "webpack --watch",
     "concurently:web": "webpack-dev-server",
-    "concurently": "concurently"
+    "concurently": "concurently",
+    "server": "nodemon packages/server/dist/server.js"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
