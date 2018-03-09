@@ -11,16 +11,8 @@ Init packages, install their dependencies etc by `lerna`
 
 `yarn run init`
 
-Run client via webpack-dev-server
+Run client via webpack-dev-server, server and server-util-gql building and server itself by
 
-`yarn run dev:web client`
-
-Run server and server graphql util building
-
-`yarn run dev:watch server server-util-gql`
-
-Run built server
-
-`yarn run server`
+`yarn start`
 
 That's it, open `http://localhost:8080/` and enjoy

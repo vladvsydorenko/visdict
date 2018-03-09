@@ -1,6 +1,6 @@
 import { GqlSchema, EGqlSchemaType } from '@visdict/server-util-gql';
-import { wordFilter } from '../inputs/WordFilter.gql';
-import { word } from './Word.gql';
+import { wordFilter } from '../inputs/wordFilter.gql';
+import { word } from './word.gql';
 
 export const query = new GqlSchema(
     EGqlSchemaType.type,

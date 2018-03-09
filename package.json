@@ -9,14 +9,8 @@
   "scripts": {
     "lerna": "lerna",
     "init": "leran bootstrap",
-    "dev:build": "./run.sh concurently:build",
-    "dev:watch": "./run.sh concurently:watch",
-    "dev:web": "./run.sh concurently:web",
-    "concurently:build": "webpack",
-    "concurently:watch": "webpack --watch",
-    "concurently:web": "webpack-dev-server",
     "concurently": "concurently",
-    "server": "nodemon packages/server/dist/server.js"
+    "start": "./start.sh"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
