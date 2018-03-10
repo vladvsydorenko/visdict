@@ -5,6 +5,7 @@ export const word = new GqlSchema(
     EGqlSchemaType.type,
     `
         type Word {
+            id: String
             text: String
             ipo: String
             language: String
