@@ -1,6 +1,6 @@
 import { IGQLSchema} from '../interfaces';
-import { imageType } from './imageType';
-import { languageType } from './languageType';
+import { imageType } from '../image/imageType';
+import { languageType } from '../language/languageType';
 
 const name = 'Word';
 

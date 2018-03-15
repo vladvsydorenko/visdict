@@ -1,34 +1,41 @@
 import { makeExecutableSchema } from 'graphql-tools';
 
-// inputs
-import { wordsFilterInput } from './input/wordsFilterInput';
+import {
+    wordSchema,
+    wordQuerySchema,
+    wordQueryResolvers,
+    wordMutationSchema,
+    wordMutationResolvers,
+} from './word';
 
-// outputs
-import { searchWordsOutput } from './output/searchWordsOutput';
+import {
+    imageSchema,
+    imageMutationSchema,
+    imageMutationResolvers,
+    imageQuerySchema,
+    imageQueryResolvers
+} from './image';
 
-// types
-import { wordType } from './types/wordType';
-import { languageType } from './types/languageType';
-import { imageType } from './types/imageType';
-
-// queries
-import { searchWordsQuery } from './queries/searchWordsQuery';
+import { languageSchema } from './language';
 
 const typeDefs = `
-    ${wordsFilterInput.schema}
-
-    ${searchWordsOutput.schema}
-
-    ${wordType.schema}
-    ${languageType.schema}
-    ${imageType.schema}
+    ${wordSchema}
+    ${imageSchema}
+    ${languageSchema}
 
     type Query {
-        ${searchWordsQuery.query}
+        ${wordQuerySchema}
+        ${imageQuerySchema}
+    }
+
+    type Mutation {
+        ${imageMutationSchema}
+        ${wordMutationSchema}
     }
 
     schema {
         query: Query
+        mutation: Mutation
     }
 `;
 
@@ -36,7 +43,12 @@ export const schema = makeExecutableSchema({
     typeDefs,
     resolvers: {
         Query: {
-            [searchWordsQuery.name]: searchWordsQuery.resolver,
+            ...wordQueryResolvers,
+            ...imageQueryResolvers,
+        },
+        Mutation: {
+            ...imageMutationResolvers,
+            ...wordMutationResolvers,
         },
     },
 });
