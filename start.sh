@@ -3,5 +3,4 @@ yarn run concurrently \
 \
 "yarn run webpack-dev-server --env.package=client" \
 "yarn run webpack --watch --env.package=server" \
-"yarn run webpack --watch --env.package=server-util-gql" \
 "yarn run nodemon ./packages/server/dist/server.js"
